@@ -1,11 +1,11 @@
 require 'rspec'
 
-def imc (peso, altura)
+def imc(peso, altura)
     imc_calculado = peso / (altura * altura)
     return imc_calculado.round(1)
 end
 
-describe ('IMC') do
+describe('IMC') do
     it('Deve calcular com peso e altura coretos') do
     peso = 60
     altura = 1.70
