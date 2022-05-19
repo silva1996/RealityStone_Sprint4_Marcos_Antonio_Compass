@@ -1,2 +1,0 @@
-Projeto será desenvolvido
-uiuiuiu
