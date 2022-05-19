@@ -1,1 +1,1 @@
-Primeira aula de Git no curso da Compass.Uol
+Conforme pedido, o desafio do RealityStone | SPRINT 4
