@@ -1,0 +1,1 @@
+bitcode_array = [ 0, 1, 2]

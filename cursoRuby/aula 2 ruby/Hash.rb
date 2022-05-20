@@ -1,0 +1,1 @@
+onebit_hash = {course: 'ruby', language: 'pt-Br', locale: 'onebitcode.com'}
