@@ -1,27 +1,151 @@
-Documentação
-Aqui você encontrará vários endereços para manuais, tutoriais e referências que serão úteis quando você sentir que gosta de programar em Ruby.
+ História e Características
+Criada na década de 90 pelo Japonês Yukihiro “Matz” Matsumoto, ruby é uma linguagem de programação orientada a objetos, projetada para ser produtiva e ao mesmo tempo divertida. Sua abordagem prioriza que o entendimento de um software deve aproximar-se mais da forma humana do que computacional. Possui sintaxe bastante natural, de fácil leitura e com código narrado quase que de forma descritiva , permitindo o entendimento de trechos de código até mesmo para iniciantes.
+A versão da linguagem disponível ao público foi lançada em 1995, e tornou-se massivamente utilizada em 2006 com formação de grupos nas principais cidades do mundo e conferências sobre Ruby com lotações esgotadas.
+Ela está classificada entre o top 10 na maioria dos índices que medem o crescimento da popularidade de linguagens de programação pelo mundo todo. Muito deste crescimento deve-se a popularidade de alguns softwares escritos em ruby, particularmente no framework web chamado Ruby on Rails.
+Desde seu lançamento até os dias atuais, tornou-se uma linguagem madura, com uma comunidade que se destaca por ser receptiva, ativa e produtiva.
+ 
 
-Instalando o Ruby
-A menos que você queira testar o Ruby no seu navegador (veja os links abaixo), você precisará ter o Ruby instalado no seu computador. Você pode verificar se o Ruby já está instalado abrindo o terminal e digitando
+ Instalação
+Dando início a nossa jornada vamos configurar nosso ambiente de desenvolvimento com a versão mais atual do ruby.
+A seguir você verá dois exemplos de como realizar este procedimento, sendo um deles por meio de uma máquina com o Ubuntu e o outro através de uma plataforma online que independe do seu sistema operacional.
+ 
+1.1 Preparando nosso ambiente – Ubuntu
 
-ruby -v
-Isso deve imprimir algumas informações sobre a versão do Ruby instalada. Se não imprimir, consulte a página de instalação para conhecer as diversas maneiras de obter o Ruby.
+Os passos a seguir são para a instalação no Ubuntu 18.10.
+Caso possua outra versão, você pode seguir os passos da sessão de instalação do ruby no link https://gorails.com/setup/ubuntu/18.10.
 
-Primeiros Passos
-Try Ruby!
-Um tutorial interativo que permite que você teste o Ruby diretamente no seu browser. Este tutorial de 15 minutos é destinado para iniciantes que queiram ter uma ideia de como é a linguagem.
-Ruby Koans
-Os Koans te conduzem pelo caminho da iluminação de modo a aprender Ruby. O objetivo é aprender a linguagem, sintaxe, estrutura algumas funções e bibliotecas comuns do Ruby. Também ensinamos cultura.
-O Guia (Comovente) de Ruby do Why
-UM livro inconveniente, porém interessante, que te ensinará Ruby através de histórias, humor e quadrinhos. Originalmente criado por why the lucky stiff, esse guia permanece um clássico para os aprendizes de Ruby.
-Ruby em Vinte Minutos
-Um bom tutorial que cobre o básico de Ruby. Desde o início ao fim, não deverá levar mais de vinte minutos.
-Ruby a Partir de Outras Linguagens
-Chegou ao Ruby por outra linguagem? Quer seja C, C++, Java, Perl, PHP ou Python, este artigo é para você!
-Ruby Essentials
-Ruby Essentials é um livro digital gratuito projetado para prover um guia conciso e fácil de seguir para o aprendiz de Ruby.
-Aprenda a Programar
-Pequeno e maravilhoso tutorial por Chris Pine para novatos em programação. Se não sabe programar, comece aqui.
-Learn Ruby the Hard Way
-Um ótimo conjunto de exercícios com explicações que o conduzem do básico do Ruby por todo o caminho até a OOP e o desenvolvimento para a web.
-Manuais
+Abra seu terminal e instale a ferramenta rbenv por meio dos seguintes comandos.
+Default
+cd
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+exec $SHELL
+
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
+exec $SHELL
+1
+2
+3
+4
+5
+6
+7
+8
+9
+cd
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+exec $SHELL
+ 
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
+exec $SHELL
+O rbenv nos permite instalar uma nova versão do ruby de forma simples.
+
+Para verificar se tudo ocorreu bem execute
+Default
+rbenv --version
+1
+rbenv --version
+Com o rbenv funcionando, instale a versão 2.5 do ruby
+Default
+rbenv install 2.5.1
+rbenv global 2.5.1
+1
+2
+rbenv install 2.5.1
+rbenv global 2.5.1
+4. Certifique-se que o ruby realmente está em sua máquina com o comando
+
+Default
+ruby --version
+1
+ruby --version
+Instalação no ubuntu ✔
+
+ 
+1.2 Preparando nosso ambiente – Codeanywhere
+
+O Codeanywhere é um ambiente de desenvolvimento compartilhado na nuvem.
+Sua configuração é rápida e simples, perfeito para quem não deseja instalar o ubuntu e quer acompanhar as aulas deste curso.
+
+1. Acesse o site https://codeanywhere.com/  e cadastre-se gratuitamente clicando em SignUp.
+
+Obs: não esqueça de confirmar seu email.
+
+2. Na página inicial, preencha o campo Name com: Container Ruby.3. Em Search stack,  pesquise: ruby.4. Agora selecione o container que está na imagem abaixo e depois clique em Create.
+
+
+
+5. O container já vem com uma ferramenta instalada chamada RVM. Através dela atualizaremos o ruby para versão atual.
+No SSH Console rode o comando
+
+Default
+rvm install 2.5.1
+1
+rvm install 2.5.1
+6. Agora temos duas versões do ruby instaladas em nossa máquina. Diga para ela utilizar a mais recente executando a linha
+
+Default
+rvm use 2.5.1
+1
+rvm use 2.5.1
+7. Para verificar se a máquina realmente está com o ruby 2.5.1 rode o comando
+
+Default
+ruby --version
+1
+ruby --version
+Instalação no Codeanywhere ✔
+
+ 
+
+Seu Primeiro Hello World
+1. Para fazer seu primeiro programa ruby crie um arquivo dentro da sua máquina ou container ruby chamado hello.rb
+Obs: Os arquivos de código ruby possuem a extensão .rb
+
+2. Abra o arquivo e adicione a seguinte linha.
+
+Default
+puts 'Hello, World!'
+1
+puts 'Hello, World!'
+3. Para executar o programa criado, acesse o Terminal ou SSH Console e rode o comando
+
+Default
+ruby hello.rb 
+1
+ruby hello.rb 
+A instrução puts vai imprimir a mensagem ‘Hello, World!’ toda vez que nosso programa for executado.
+
+Parabéns, agora você é um programador Ruby!!!
+
+ 
+
+IRB
+Uma ótima opção para testarmos códigos pequenos é a ferramenta Irb (Interactive Ruby)
+
+Através de linha de comando ela nos permite interagir com códigos ruby sem a necessidade de criar arquivos, interpretando códigos e retornando resultados de forma imediata.
+
+Não precisa de instalação, então caso você tenha o ruby instalado também tem o IRB!
+ 
+
+Primeiros passos
+
+O Irb estará presente em algumas partes do nosso curso e para que você se familiarize com ele vamos dizer um Hello, world! por linha de comando.
+
+1. No Terminal ou SSH Console, rode o comando.
+
+Default
+irb
+1
+irb
+2. Digite o código a seguir e depois pressione enter para que a mensagem seja imprimida.
+
+Default
+puts 'Hello, World!'
+1
+puts 'Hello, World!'
